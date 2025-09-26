@@ -10,8 +10,27 @@
         /* Configure the default font to Inter and ensure smooth scrolling */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f9fb; /* Very light background */
             scroll-behavior: smooth;
+            /* Enhanced Minimal Background: Lighter background with a subtle, vibrant dot pattern */
+            background-color: #f7f9fb; 
+            background-image: radial-gradient(#99f6e4 0.5px, transparent 0.5px); /* Brighter cyan/teal dot color */
+            background-size: 15px 15px;
+        }
+        /* Custom class for a deeper, more defined shadow */
+        .shadow-3xl {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* Gradient Text for the Name */
+        .gradient-text {
+            /* Tailwind gradient classes equivalent (text-transparent bg-clip-text) */
+            background-image: linear-gradient(to right, #14b8a6, #3b82f6); /* Teal to Blue */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #14b8a6; /* Fallback color */
+        }
+        /* Custom hover effect for interest cards */
+        .interest-card:hover {
+            box-shadow: 0 5px 15px rgba(20, 184, 166, 0.3); /* Teal glow effect on hover */
         }
     </style>
     <!-- Inter font setup (Tailwind defaults to this, but we include it for explicit guarantee) -->
@@ -21,52 +40,56 @@
 
     <!-- Main Container -->
     <div class="flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
-        <div class="w-full max-w-4xl bg-white p-8 md:p-12 shadow-xl rounded-2xl border border-gray-100">
+        <!-- Main Card: Increased shadow and roundness for a cleaner "float" effect -->
+        <div class="w-full max-w-4xl bg-white p-8 md:p-12 shadow-2xl rounded-3xl border-t-8 border-teal-500 transition duration-500 hover:shadow-3xl">
 
             <!-- Header Section (Name & Location) -->
             <header class="text-center mb-12">
-                <h1 class="text-5xl font-extrabold tracking-tight text-gray-900 mb-2">
+                <!-- Apply gradient-text class for vibrant name -->
+                <h1 class="text-5xl font-extrabold tracking-tight mb-2 gradient-text">
                     Lakshmikrishna P R
                 </h1>
-                <p class="text-xl text-gray-500 font-light">
+                <p class="text-xl text-gray-600 font-medium">
                     Aspiring Computer Scientist | Thrissur, Kerala
                 </p>
             </header>
 
             <!-- Content Grid/Sections -->
-            <main class="space-y-10">
+            <main class="space-y-12">
 
-                <!-- Education Section -->
-                <section class="border-b pb-8 border-gray-100">
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4 flex items-center">
-                        <!-- Education Icon (Inline SVG for minimalism) -->
-                        <svg class="w-6 h-6 mr-3 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l-9 5m9-5v10m9-5l-9 5m-9-5v10m9-5v10"></path></svg>
+                <!-- Education Section (Primary Teal Accent) -->
+                <section class="border-b pb-8 border-gray-200">
+                    <h2 class="text-2xl font-extrabold text-gray-700 mb-4 flex items-center">
+                        <!-- Education Icon (Vibrant Teal-700) -->
+                        <svg class="w-6 h-6 mr-3 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l-9 5m9-5v10m9-5l-9 5m-9-5v10m9-5v10"></path></svg>
                         Education
                     </h2>
-                    <div class="ml-9">
-                        <p class="text-lg font-semibold text-gray-800">BTech (Computer Science)</p>
+                    <div class="ml-9 border-l-4 border-teal-200 pl-4 py-2">
+                        <p class="text-lg font-bold text-gray-800">BTech (Computer Science)</p>
                         <p class="text-base text-gray-600">Vidya Academy of Science and Technology</p>
                         <p class="text-sm text-gray-500 italic">Thalakotukkara, Thrissur</p>
                     </div>
                 </section>
 
-                <!-- Interests & Passion Section -->
+                <!-- Interests & Passion Section (Secondary Pink/Teal Accents) -->
                 <section>
-                    <h2 class="text-2xl font-bold text-gray-700 mb-4 flex items-center">
-                        <!-- Interests Icon -->
-                        <svg class="w-6 h-6 mr-3 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <h2 class="text-2xl font-extrabold text-gray-700 mb-4 flex items-center">
+                        <!-- Interests Icon (Vibrant Pink-700) -->
+                        <svg class="w-6 h-6 mr-3 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                         Interests & Philosophy
                     </h2>
-                    <div class="ml-9 space-y-3">
-                        <div class="bg-indigo-50 p-4 rounded-xl shadow-inner">
-                            <p class="font-medium text-gray-800">Visual Expression (Drawing)</p>
-                            <p class="text-sm text-gray-600">
+                    <div class="ml-9 space-y-4">
+                        <!-- Interest Card 1: Teal background with interactive hover and custom glow -->
+                        <div class="interest-card bg-teal-50 p-4 rounded-xl shadow-inner transition duration-300 ease-in-out transform hover:scale-[1.02] hover:bg-teal-100 cursor-pointer border-l-4 border-teal-500">
+                            <p class="font-bold text-gray-900">Visual Expression (Drawing)</p>
+                            <p class="text-sm text-gray-700 mt-1">
                                 Passionate about drawing as a medium for creativity and design, which complements problem-solving skills in technology.
                             </p>
                         </div>
-                        <div class="bg-indigo-50 p-4 rounded-xl shadow-inner">
-                            <p class="font-medium text-gray-800">Continuous Learning (Understanding New Things)</p>
-                            <p class="text-sm text-gray-600">
+                        <!-- Interest Card 2: Teal background with interactive hover and custom glow -->
+                        <div class="interest-card bg-teal-50 p-4 rounded-xl shadow-inner transition duration-300 ease-in-out transform hover:scale-[1.02] hover:bg-teal-100 cursor-pointer border-l-4 border-teal-500">
+                            <p class="font-bold text-gray-900">Continuous Learning (Understanding New Things)</p>
+                            <p class="text-sm text-gray-700 mt-1">
                                 Driven by curiosity and a commitment to deep understanding, constantly exploring new concepts and technologies.
                             </p>
                         </div>
@@ -75,7 +98,7 @@
             </main>
 
             <!-- Footer/Contact Placeholder -->
-            <footer class="mt-12 pt-8 border-t border-gray-100 text-center text-sm text-gray-400">
+            <footer class="mt-12 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
                 <p>&copy; 2025 Lakshmikrishna P R. All rights reserved.</p>
                 <p>Designed with a focus on simplicity and clarity.</p>
             </footer>
